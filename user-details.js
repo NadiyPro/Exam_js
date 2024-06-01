@@ -35,7 +35,13 @@ window.onload=function () {
             postButton.classList.add('postButton');
             const postA = document.createElement('a');
             postA.classList.add('postA');
-            postA.innerHTML =`user-details`
+            postA.innerHTML =`post of current user`
+            postButton.onclick=function (e) {
+                e.preventDefault();
+                const divTitle = document.createElement('div');
+                divTitle.classList
+
+            }
             // postA.href =`user-details.html?id=${userPost.id}`
             innerDiv.append(postButton);
             postButton.append(postA);
