@@ -13,7 +13,11 @@ window.onload=function () {
     finishDiv.append(innerFDiv);
 
 
-    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
+    fetch(`https://jsonplaceholder.typicode.com/users/${POST_ID}/posts`)
         .then((response) => response.json())
-        .then((pos) => console.log(pos))
+        .then((posts) => console.log(posts))
+
+    // fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
+    //     .then((response) => response.json())
+    //     .then((comments) => console.log(comments))
 }
