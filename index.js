@@ -12,8 +12,23 @@ basicDiv.classList.add('basicDiv');
 document.body.appendChild(basicDiv);
 fetch('https://jsonplaceholder.typicode.com/users')
     .then((response)=>response.json())
-    .then((user)=>console.log(user))
+    .then((users)=>console.log(users))
 
 fetch('https://jsonplaceholder.typicode.com/users')
     .then((response)=>response.json())
-    .then((user)=>console.log(user))
+    .then((users)=>{
+        for(let user of users){
+            const userDiv = document.createElement('div');
+            userDiv.classList.add('userDiv');
+            userDiv.innerHTML = `<p>id: ${user.id} <br> name: ${user.name} </p>`
+            const userButton = document.createElement('button');
+            userButton.classList.add('userButton');
+            const userA = document.createElement('a');
+            userA.classList.add('userA');
+            userA.innerHTML =`user-details`
+            userA.href =`user-details.html?id=${user.id}`
+            userButton.append(userA);
+            basicDiv.append(userDiv);
+            userDiv.append(userButton);
+        }
+})
