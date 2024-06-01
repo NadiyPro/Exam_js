@@ -44,6 +44,7 @@ window.onload=function () {
                 divTitleBasic.classList.add('divTitleBasic')
 
                 for(let userPost of userPosts){
+
                     const divTitle = document.createElement('div');
                     divTitle.classList.add('divTitle')
                     divTitle.innerHTML=`<p>${userPost.title}</p>`;
