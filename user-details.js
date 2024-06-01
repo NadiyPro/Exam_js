@@ -28,5 +28,9 @@ window.onload=function () {
                 innerDiv.append(divCompany);
             }
         )
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+        .then((response)=>response.json())
+        .then((userPost)=> {console.log(userPost)
 
+        })
 }
