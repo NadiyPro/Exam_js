@@ -18,11 +18,11 @@ window.onload=function () {
                 innerDiv.innerHTML=`<h2>name: ${user.name} <br> username: ${user.username}</h2> <p>website: ${user.website} <br> phone: ${user.phone} <br> website: ${user.website}</p>`
 
                 const divAddress = document.createElement('div');
-                divAddress.innerHTML=`divAddress:`
+                divAddress.classList.add('divAddress');
                 divAddress.innerHTML=`<p>address: <br> city: ${user.address.city} <br> street: ${user.address.street} <br> suite: ${user.address.suite} <br> zipcode: ${user.address.zipcode} <br> geo: lat ${user.address.geo.lat}, lng ${user.address.geo.lng}</p>`
 
                 const divCompany = document.createElement('div');
-                divCompany.innerHTML=`divCompany:`
+                divCompany.classList.add('divCompany');
                 divCompany.innerHTML = `<p>company: <br> name: ${user.company.name} <br> catchPhrase: ${user.company.catchPhrase} <br> bs: ${user.company.bs}</p>`
                 innerDiv.append(divAddress);
                 innerDiv.append(divCompany);
