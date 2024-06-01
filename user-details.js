@@ -47,12 +47,12 @@ window.onload=function () {
                 for(let userPost of userPosts){
                     const divTitle = document.createElement('div');
                     divTitle.classList.add('divTitle')
-                    divTitle.innerHTML=`${userPost.title}`;
+                    divTitle.innerHTML=`<p>${userPost.title}</p>`;
                     divTitleBasic.append(divTitle);
 
                     const postDetalButton = document.createElement('button');
                     postDetalButton.classList.add('postDetalButton');
-                    postDetalButton.innerHTML=
+                    postDetalButton.innerHTML=`post-details`;
 
                     divTitle.append(postDetalButton);
                 }
