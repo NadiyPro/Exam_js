@@ -3,6 +3,7 @@ window.onload=function () {
     detailsDiv.classList.add('detailsDiv');
     document.body.append(detailsDiv);
 
+
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get('id')
 
@@ -30,20 +31,46 @@ window.onload=function () {
         )
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
         .then((response)=>response.json())
-        .then((userPost)=> {console.log(userPost)
+        .then((userPosts)=> {
             const postButton = document.createElement('button');
             postButton.classList.add('postButton');
-            const postA = document.createElement('a');
-            postA.classList.add('postA');
-            postA.innerHTML =`post of current user`
+            // const postA = document.createElement('a');
+            // postA.classList.add('postA');
+            postButton.innerHTML =`post of current user`
+            innerDiv.append(postButton);
+
             postButton.onclick=function (e) {
                 e.preventDefault();
-                const divTitle = document.createElement('div');
-                divTitle.classList
+                const divTitleBasic = document.createElement('div');
+                divTitleBasic.classList.add('divTitleBasic')
 
+                for(let userPost of userPosts){
+                    const divTitle = document.createElement('div');
+                    divTitle.classList.add('divTitle')
+                    divTitle.innerHTML=`${userPost.title}`;
+                    divTitleBasic.append(divTitle);
+
+                    const postDetalButton = document.createElement('button');
+                    postDetalButton.classList.add('postDetalButton');
+                    postDetalButton.innerHTML=
+
+                    divTitle.append(postDetalButton);
+                }
+                innerDiv.append(divTitleBasic);
+
+                // for(let userPost of userPosts){
+                //     console.log(userPost.title)
+                // }
             }
             // postA.href =`user-details.html?id=${userPost.id}`
-            innerDiv.append(postButton);
-            postButton.append(postA);
         })
+
 }
+
+// postButton.onclick=function (e) {
+//     e.preventDefault();
+//     const divTitle = document.createElement('div');
+//     divTitle.classList.add('divTitle')
+//     detailsDiv.append(divTitle);
+//
+// }
