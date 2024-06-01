@@ -15,10 +15,6 @@ window.onload=function () {
 
     fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}`)
         .then((response) => response.json())
-        .then((posts) => console.log(posts))
-
-    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}`)
-        .then((response) => response.json())
         .then((posts) =>{
             innerFDiv.innerHTML= `<h2>id: ${posts.id} <br> userId: ${posts.userId} </h2> <h3>title: ${posts.title} <br> body: ${posts.body} </h3>`
             }
@@ -27,4 +23,20 @@ window.onload=function () {
     fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
         .then((response) => response.json())
         .then((comments) => console.log(comments))
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
+        .then((response) => response.json())
+        .then((comments) => {
+            for(let comment of comments){
+                const commentFDiv = document.createElement('div');
+                commentFDiv.classList.add('commentFDiv');
+                commentFDiv.innerHTML=`<p> postId: ${comment.postId} <br> id: ${comment.id} <br> name: ${comment.name} <br> email: ${comment.email} <br> body: ${comment.body}</p>`
+
+                finishDiv.append(commentFDiv);
+            console.log(comment)
+            }
+        })
+
+
+
 }
