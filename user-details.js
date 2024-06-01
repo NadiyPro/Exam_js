@@ -1,3 +1,4 @@
+// // id user // DOMContentLoaded
 window.onload=function () {
     const detailsDiv = document.createElement('div');
     detailsDiv.classList.add('detailsDiv');
@@ -9,14 +10,13 @@ window.onload=function () {
 
     const innerDiv = document.createElement('div');
     innerDiv.classList.add('innerDiv');
-    innerDiv.innerHTML = `<h3>${userId}</h3>`
     detailsDiv.append(innerDiv);
 
 
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then((response)=>response.json())
         .then((user)=>{
-                innerDiv.innerHTML=`<h2>name: ${user.name} <br> username: ${user.username}</h2> <p>website: ${user.website} <br> phone: ${user.phone} <br> website: ${user.website}</p>`
+                innerDiv.innerHTML=`<h2> id: ${userId} <br> name: ${user.name} <br> username: ${user.username}</h2> <p>website: ${user.website} <br> phone: ${user.phone} <br> website: ${user.website}</p>`
 
                 const divAddress = document.createElement('div');
                 divAddress.classList.add('divAddress');

@@ -1,3 +1,4 @@
+// // id post
 window.onload=function () {
     const finishDiv = document.createElement('div');
     finishDiv.classList.add('finishDiv');
@@ -9,15 +10,21 @@ window.onload=function () {
 
     const innerFDiv = document.createElement('div');
     innerFDiv.classList.add('innerDiv');
-    innerFDiv.innerHTML = `<h3>${POST_ID}</h3>`;
     finishDiv.append(innerFDiv);
 
 
-    fetch(`https://jsonplaceholder.typicode.com/users/${POST_ID}/posts`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}`)
         .then((response) => response.json())
         .then((posts) => console.log(posts))
 
-    // fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
-    //     .then((response) => response.json())
-    //     .then((comments) => console.log(comments))
+    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}`)
+        .then((response) => response.json())
+        .then((posts) =>{
+            innerFDiv.innerHTML= `<h2>id: ${posts.id} <br> userId: ${posts.userId} </h2> <h3>title: ${posts.title} <br> body: ${posts.body} </h3>`
+            }
+        )
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
+        .then((response) => response.json())
+        .then((comments) => console.log(comments))
 }
