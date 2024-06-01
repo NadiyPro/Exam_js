@@ -34,8 +34,6 @@ window.onload=function () {
         .then((userPosts)=> {
             const postButton = document.createElement('button');
             postButton.classList.add('postButton');
-            // const postA = document.createElement('a');
-            // postA.classList.add('postA');
             postButton.innerHTML =`post of current user`
             innerDiv.append(postButton);
 
@@ -52,25 +50,18 @@ window.onload=function () {
 
                     const postDetalButton = document.createElement('button');
                     postDetalButton.classList.add('postDetalButton');
-                    postDetalButton.innerHTML=`post-details`;
 
+                    const postA = document.createElement('a');
+                    postA.classList.add('postA');
+                    postA.innerHTML=`post-details`;
+                    postA.href =`post-details.html?id=${userPost.id}`
+
+                    postDetalButton.append(postA);
                     divTitle.append(postDetalButton);
                 }
                 innerDiv.append(divTitleBasic);
 
-                // for(let userPost of userPosts){
-                //     console.log(userPost.title)
-                // }
             }
-            // postA.href =`user-details.html?id=${userPost.id}`
         })
 
 }
-
-// postButton.onclick=function (e) {
-//     e.preventDefault();
-//     const divTitle = document.createElement('div');
-//     divTitle.classList.add('divTitle')
-//     detailsDiv.append(divTitle);
-//
-// }
