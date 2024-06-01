@@ -27,12 +27,15 @@ window.onload=function () {
     fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}/comments`)
         .then((response) => response.json())
         .then((comments) => {
+            const commentBasicFDiv = document.createElement('div');
+            commentBasicFDiv.classList.add('commentBasicFDiv');
             for(let comment of comments){
                 const commentFDiv = document.createElement('div');
                 commentFDiv.classList.add('commentFDiv');
                 commentFDiv.innerHTML=`<p> postId: ${comment.postId} <br> id: ${comment.id} <br> name: ${comment.name} <br> email: ${comment.email} <br> body: ${comment.body}</p>`
 
-                finishDiv.append(commentFDiv);
+                finishDiv.append(commentBasicFDiv);
+                commentBasicFDiv.append(commentFDiv);
             console.log(comment)
             }
         })
