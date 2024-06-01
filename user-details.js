@@ -31,6 +31,13 @@ window.onload=function () {
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
         .then((response)=>response.json())
         .then((userPost)=> {console.log(userPost)
-
+            const postButton = document.createElement('button');
+            postButton.classList.add('postButton');
+            const postA = document.createElement('a');
+            postA.classList.add('postA');
+            postA.innerHTML =`user-details`
+            // postA.href =`user-details.html?id=${userPost.id}`
+            innerDiv.append(postButton);
+            postButton.append(postA);
         })
 }
