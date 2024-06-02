@@ -63,7 +63,9 @@ window.onload=function () {
                 }
                 innerDiv.append(divTitleBasic);
 
-            }
-        })
-
-}
+                postButton.addEventListener('click',function (e) {
+                    e.preventDefault();
+                    divTitleBasic.remove()
+            })
+        }
+})}
