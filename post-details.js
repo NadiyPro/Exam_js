@@ -4,7 +4,6 @@ window.onload=function () {
     finishDiv.classList.add('finishDiv');
     document.body.append(finishDiv);
 
-
     const urlParamspost = new URLSearchParams(window.location.search);
     const POST_ID = urlParamspost.get('id');
 
@@ -16,7 +15,7 @@ window.onload=function () {
     fetch(`https://jsonplaceholder.typicode.com/posts/${POST_ID}`)
         .then((response) => response.json())
         .then((posts) =>{
-            innerFDiv.innerHTML= `<h2>id: ${posts.id} <br> userId: ${posts.userId} </h2> <h3>title: ${posts.title} <br> body: ${posts.body} </h3>`
+                innerFDiv.innerHTML= `<h2>id: ${posts.id} <br> userId: ${posts.userId} </h2> <h3>title: ${posts.title} <br> body: ${posts.body} </h3>`
             }
         )
 
@@ -46,10 +45,7 @@ window.onload=function () {
 
                 finishDiv.append(commentBasicFDiv);
                 commentBasicFDiv.append(commentFDiv);
-            console.log(comment)
+                console.log(comment)
             }
         })
-
-
-
 }
