@@ -38,6 +38,15 @@ window.onload=function () {
             postButton.innerHTML =`post of current user`
             innerDiv.append(postButton);
 
+            const backButton = document.createElement('button');
+            backButton.classList.add('backButton');
+            const backA = document.createElement('a');
+            backA.classList.add('backA');
+            backA.innerHTML=`back`;
+            backA.href =`index.html`
+            backButton.append(backA);
+            innerDiv.append(backButton);
+
             postButton.onclick=function (e) {
                 e.preventDefault();
                 const divTitleBasic = document.createElement('div');
@@ -61,6 +70,7 @@ window.onload=function () {
                     postDetalButton.append(postA);
                     divTitle.append(postDetalButton);
                 }
+
                 innerDiv.append(divTitleBasic);
 
                 postButton.addEventListener('click',function (e) {

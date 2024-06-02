@@ -29,6 +29,16 @@ window.onload=function () {
         .then((comments) => {
             const commentBasicFDiv = document.createElement('div');
             commentBasicFDiv.classList.add('commentBasicFDiv');
+
+            const lastButton = document.createElement('button');
+            lastButton.classList.add('lastButton');
+            const lastA = document.createElement('a');
+            lastA.classList.add('lastA');
+            lastA.innerHTML=`back`;
+            lastA.href =`index.html`
+            lastButton.append(lastA);
+            innerFDiv.append(lastButton);
+
             for(let comment of comments){
                 const commentFDiv = document.createElement('div');
                 commentFDiv.classList.add('commentFDiv');
